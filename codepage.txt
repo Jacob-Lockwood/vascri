@@ -1,0 +1,18 @@
+ |0123456789ABCDEF
+-+----------------
+0|         ¶
+1|
+2| !"#$%&'()*+,-./
+3|0123456789:;<=>?
+4|@ABCDEFGHIJKLMNO
+5|PQRSTUVWXYZ[\]^_
+6|`abcdefghijklmno
+7|pqrstuvwxyz{|}~ạ
+8|ḅc̣ḍẹf̣g̣ḥịj̣ḳḷṃṇọp̣q̣
+9|ṛṣṭụṿẉx̣ỵẓa̤b̤c̤d̤e̤f̤g̤
+A|h̤i̤j̤k̤l̤m̤n̤o̤p̤q̤r̤s̤t̤ṳv̤w̤
+B|x̤y̤z̤
+C|
+D|
+E|
+F|
