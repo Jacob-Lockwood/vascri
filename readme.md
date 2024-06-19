@@ -15,12 +15,12 @@ between Japt and Vascri programs, but that's just how this goes.)
 Japt's name comes from taking the first and last two characters of JavaScript:
 
 <!-- deno-fmt-ignore -->
-<u>**Ja**</u>vascri<u>**pt**</u>
+<ins>**Ja**</ins>vascri<ins>**pt**</ins>
 
 Therefore, Vascri takes the rest:
 
 <!-- deno-fmt-ignore -->
-Ja<u>**vascri**</u>pt
+Ja<ins>**vascri**</ins>pt
 
 ## Motivation
 
