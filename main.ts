@@ -38,7 +38,8 @@ const triad = () => `.${t(/^[a-z][\u0324:]/)[0]}(${arg()},${arg()})`;
 const dyad = () => `.${t(/^[a-z][\u0323\.]/)[0]}(${arg()})`;
 const monad = () => `.${t(/^[a-z]/)}()`;
 const infix = () => t(/^[+\-*/]/) + arg();
-const chain = () => or([triad, dyad, monad, infix]);
+const cond = () => t(/^\?/) + arg() + t(/^\!/);
+const chain = () => or([triad, dyad, monad, infix, cond]);
 function arg(): string {
   const z = () => or([nilad, () => "X" + chain()]);
   const p = () => t(/^\(/) + expr() + optional(")");
