@@ -39,7 +39,6 @@ written in Japt and Vyxal respectively:
 ```
 Japt:   @ãX mx ¯J eUtX}a
 Vyxal:  ?lṠṪ?nȯ⁼)ṅ
-Vascri: {w.}
 ```
 
 [Japt]: https://github.com/ETHproductions/japt
