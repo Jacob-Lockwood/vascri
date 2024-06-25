@@ -41,7 +41,7 @@ const nme = () => t(/^[A-Z]/);
 const arr = () =>
   t(/^\[/) + many(() => expr() + optional(",")).join("") + optional("]");
 const fun = () =>
-  `new $F((X,Y,Z)=>${
+  `new $F((D,E,F)=>${
     t(/^\{/) +
     many(expr)
       .map((x, i, a) => (i === a.length - 1 ? `return(${x})` : x))

@@ -33,5 +33,14 @@ we can see that while Japt was at 4th place for shortest language in 2016, by
 If we look at Japt code side-by-side with Vyxal, we can see some glaring issues
 that make Japt code longer.
 
+Here's an example of two programs to do the same task using the same method,
+written in Japt and Vyxal respectively:
+
+```
+Japt:   @ãX mx ¯J eUtX}a
+Vyxal:  ?lṠṪ?nȯ⁼)ṅ
+Vascri: {w.}
+```
+
 [Japt]: https://github.com/ETHproductions/japt
 [Vyxal]: https://github.com/Vyxal/Vyxal
