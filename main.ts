@@ -36,28 +36,24 @@ const t = (re: RegExp) => {
 
 const num = () => `new $N(${Number(t(/^[+-]?(?:\d*\.\d+|\d+)/))})`;
 const str = () => `new $S(${t(/^"(?:\\.|[^"])*"/)})`;
-const chr = () => `new $S('${t(/^'./)[1]}')`;
-const nme = () => t(/^[A-Z]/);
+const chr = () => `new $S(${JSON.stringify(t(/^'./)[1])})`;
+const name = () => t(/^[A-Z]/);
 const arr = () =>
   t(/^\[/) + many(() => expr() + optional(",")).join("") + optional("]");
-const fun = () =>
-  `new $F((D,E,F)=>${
-    t(/^\{/) +
-    many(expr)
-      .map((x, i, a) => (i === a.length - 1 ? `return(${x})` : x))
-      .join(";\n") +
-    optional("}")
-  })`;
-const par = () => t(/^\(/) + expr() + optional(")");
-const nilad = () => or([num, str, chr, nme, par, arr, fun]);
+const func = () =>
+  `new $F((D,E,F)=>${t(/^\{/)}
+    return (${many(expr).join(",\n")})
+  ${optional("}")})`;
+const paren = () => t(/^\(/) + expr() + optional(")");
+const nilad = () => or([num, str, chr, name, paren, arr, func]);
 const triad = () => `.${t(/^[a-z](\u0324|\.\.)/)[0]}(${arg()},${arg()})`;
 const dyad = () => `.${t(/^[a-z](\u0323|\.)/)[0]}(${arg()})`;
 const monad = () => `.${t(/^[a-z]/)}()`;
-const infix = () => t(/^[+\-*/]/) + arg();
+const infix = () => t(/^[+\-*]|&&|\|\|/) + arg();
 const cond = () => t(/^\?/) + arg() + t(/^:/);
 const chain = () => or([triad, dyad, monad, infix, cond]);
 function arg(): string {
-  return or([nilad, () => "U" + chain()]);
+  return or([nilad, () => "U" + chain(), () => "U"]);
 }
 function expr() {
   return arg() + many(chain).join("");
